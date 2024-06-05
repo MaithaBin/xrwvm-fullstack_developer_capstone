@@ -124,3 +124,16 @@ img{
     text-align:center;
     box-shadow: 2px 2px 3px #999;  
 }
+
+.vertical-line {
+    margin-top: 15%;
+    margin-bottom: 15%;
+    border-left: 3px solid black;
+    height: 230px;
+}
+
+.details {
+    line-height: 5px;
+    font-size: 16px;
+    text-align: center;
+}
