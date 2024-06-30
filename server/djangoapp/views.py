@@ -1,4 +1,4 @@
-from django.shortcuts import render
+# from django.shortcuts import render
 # from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib.auth.models import User
 # from django.shortcuts import get_object_or_404, render, redirect
@@ -14,7 +14,7 @@ from django.views.decorators.csrf import csrf_exempt
 from .populate import initiate
 
 from .models import CarMake, CarModel
-from .restapis import get_request, analyze_review_sentiments, post_review
+# from .restapis import get_request, analyze_review_sentiments, post_review
 
 # Get an instance of a logger
 logger = logging.getLogger(__name__)
@@ -62,6 +62,7 @@ def registration(request):
     except Exception as e:
         # If not, simply log this is a new user
         logger.debug("{} is new user".format(username))
+        print(f"Error: {e}")
     # If it is a new user
     if not username_exist:
         # Create user in auth_user table
@@ -89,7 +90,7 @@ def get_cars(request):
     for car_model in car_models:
         cars.append({"CarModel": car_model.name,
                      "CarMake": car_model.car_make.name})
-    return JsonResponse({"CarModels":cars})
+    return JsonResponse({"CarModels": cars})
 
 
 def get_dealerships(request, state="All"):
@@ -124,11 +125,12 @@ def get_dealer_details(request, dealer_id):
 
 def add_review(request):
     if request.user.is_anonymous is False:
-        data = json.loads(request.body)
+        # data = json.loads(request.body)
         try:
             # response = post_review(data)
             return JsonResponse({"status": 200})
         except Exception as e:
+            print(f"Error: {e}")
             return JsonResponse({"status": 401,
                                  "message": "Error in posting review"})
     else:
