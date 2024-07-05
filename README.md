@@ -34,9 +34,8 @@ This module was to create the user management system to allow users to register,
 ![logout](https://github.com/MaithaBin/xrwvm-fullstack_developer_capstone/assets/141325017/ac0405ff-befe-4feb-901d-b30d5a68f767)
 ![sign-up](https://github.com/MaithaBin/xrwvm-fullstack_developer_capstone/assets/141325017/479126cc-8fe9-4b56-85eb-a590ecc337e1)
 
-
-
 # Module 3
+In Module 3, there were 5 types of tasks: implementing some API endpoints using Express that transact with MongoDB, containerizing the Mongo and Express server using Docker and running it, creating Car Make and Car Model with Django Models and populate the database, deploying a sentiment analyzer to the IBM Code Engine, and creating proxy services to access these external services. 
 
 # Module 4
 
