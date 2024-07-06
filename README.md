@@ -9,6 +9,7 @@ This project was provided by the Full Stack Application Development Capstone Pro
 
 ### Languages/Frameworks/Libraries
 - HTML/CSS/Boostrap
+- Javascript
 - React
 - Node.js
 - Express
@@ -35,9 +36,29 @@ This module was to create the user management system to allow users to register,
 ![sign-up](https://github.com/MaithaBin/xrwvm-fullstack_developer_capstone/assets/141325017/479126cc-8fe9-4b56-85eb-a590ecc337e1)
 
 # Module 3
-In Module 3, there were 5 types of tasks: implementing some API endpoints using Express that transact with MongoDB, containerizing the Mongo and Express server using Docker and running it, creating Car Make and Car Model with Django Models and populate the database, deploying a sentiment analyzer to the IBM Code Engine, and creating proxy services to access these external services. 
+In this module, there were the following tasks given: creating some API endpoints using Express and MongoDB, building CarModel and CarMake Django Model, and creating Django Proxy Services Of Backend APIs.
+
+The template provided me two schema files for Reviews and Dealerships entities, along with JSON files containing dealership and review data to be loaded into MongoDB and served through endpoints. The Node app uses mongoose to interact with the MongoDB. The first task was to implement API endopoints in server/database/app.js. After implementing, the code can fetch dealers and to filter them by state or ID.
+![dealer_review](https://github.com/MaithaBin/xrwvm-fullstack_developer_capstone/assets/141325017/1ecb0d7e-08ad-4a32-8e06-3aca62aaff57)
+![dealerships](https://github.com/MaithaBin/xrwvm-fullstack_developer_capstone/assets/141325017/1c68d36e-2f4d-417a-ba79-64c052d21efd)
+![dealer_details](https://github.com/MaithaBin/xrwvm-fullstack_developer_capstone/assets/141325017/901bc7cc-3f1b-4c70-b172-77d36185527d)
+![kansasDealers](https://github.com/MaithaBin/xrwvm-fullstack_developer_capstone/assets/141325017/8387f8d9-acce-4216-a567-45b3566012f7)
+ 
+Next, the task was to create 2 models: CarModel and CarMake. The former was a model to save some data about a car's model, while the latter was to save some data about a car's make. After implementing the 2 models, I registered the CarMake and CarModel models with the admin site.
+![admin_logout2](https://github.com/MaithaBin/xrwvm-fullstack_developer_capstone/assets/141325017/c5c5230c-9525-4274-b45e-13a3ef17c724)
+![cars](https://github.com/MaithaBin/xrwvm-fullstack_developer_capstone/assets/141325017/72c58881-1fef-4838-8411-8396bcffa1d0)
+![car models](https://github.com/MaithaBin/xrwvm-fullstack_developer_capstone/assets/141325017/0f3ebf88-42ef-46e8-aa93-7702400a5e1f)
+
+Finally, the task was to create such Django views as proxy services. To integrate external dealer and review data, I needed to call the API end points from the Django app and process the API results in Django views. Such Django views can be seen as proxy services to the end user because they fetch data from external resources per users' requests. 
+
+I added the get_request method to access API endpoints to fetchReviews and fetchDealers from the Django app in djangoapp/restapis.py. The get_request method has two arguments, the endpoint to be requested, and a Python keyword arguments representing all URL parameters to be associated with the get call. This function calls GET method in requests library with a URL and any URL parameters such as dealerId.
+
+Also, I deployed sentiment analysis on Code Engine as a microservice. The template provided sentiment_analyzer.py which uses NLTK for sentiment analysis and a Dockerfile for deploying the service in Code Engine and consuming it as a microservice.
+
+To Django views to get dealers, I updated get_dealerships view method and add get_dealer_details and get_dealer_reviews method in djangoapp/views.py. Plus, to create a Django view to post a dealer review, post_review method was added in restapis.py and a new def add_review(request): method was created in views.py to handle review post request.
 
 # Module 4
+
 
 # Module 5
 
