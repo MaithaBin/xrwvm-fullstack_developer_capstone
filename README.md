@@ -58,9 +58,20 @@ Also, I deployed sentiment analysis on Code Engine as a microservice. The templa
 To Django views to get dealers, I updated get_dealerships view method and add get_dealer_details and get_dealer_reviews method in djangoapp/views.py. Plus, to create a Django view to post a dealer review, post_review method was added in restapis.py and a new def add_review(request): method was created in views.py to handle review post request.
 
 # Module 4
+Module 4 was to add dynamic front end pages using React. I added the Dealers component in frontend/src/App.js and the routes for Dealers and Dealer in server/djangoproj/urls.py. 
+![get_dealers_loggedin](https://github.com/MaithaBin/xrwvm-fullstack_developer_capstone/assets/141325017/215da9f6-c0e2-4727-a7ee-294dcbcc1340)
+![dealersbystate](https://github.com/MaithaBin/xrwvm-fullstack_developer_capstone/assets/141325017/f00b9d06-9d3d-491e-b391-bc789993f3ca)
 
+I also imported the route to the Dealer REACT component to the rest of the routes to show reviews. 
+![dealer_id_reviews](https://github.com/MaithaBin/xrwvm-fullstack_developer_capstone/assets/141325017/2639ba18-0d64-445a-aa3c-c63817b027f1)
+
+In addition, to create a dealer details or reviews page, I Imported PostReview component and added postreview/<dealer id> route to frontend/src/App.js.
+![dealership_review_submission](https://github.com/MaithaBin/xrwvm-fullstack_developer_capstone/assets/141325017/ba5cfb4f-be89-4d69-9dd5-81f8acdc0419)
+![added_review](https://github.com/MaithaBin/xrwvm-fullstack_developer_capstone/assets/141325017/1bcb3f43-416e-431f-be13-203fcceb8e67)
 
 # Module 5
+In this module. the task was to set a CI/CD action flow for linting all the JS and Python files I have created. A workflow that would lint my Python and JavaScript files was provided, so I copied into GitHub Actions. When running it, I got over 200 lint errors. Then I fixed my code and eventually removed all lint errors.
+![CICD](https://github.com/MaithaBin/xrwvm-fullstack_developer_capstone/assets/141325017/734b7ee0-db3f-4c06-9839-14cdd98e191a)
 
 
 
